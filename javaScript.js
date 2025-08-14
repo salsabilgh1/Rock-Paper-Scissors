@@ -13,9 +13,9 @@ function getComputerChoice(){
 
 function getHumenChoice(){
     let choice=prompt("enter your choice : Rock , Paper , or Scissors");
-    if(choice==="Rock"|| choice==="Paper"||choice==="Scissors"){
+    
         return choice;
-    }
+    
 }
 let humanScor=0;
 let computerScore=0;
