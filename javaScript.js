@@ -10,4 +10,11 @@ function getComputerChoice(){
         return "Scissors"
     }
 }
-console.log(getComputerChoice())
+
+function getHumenChoice(){
+    let choice=prompt("enter your choice : Rock , Paper , or Scissors");
+    if(choice==="Rock"|| choice==="Paper"||choice==="Scissors"){
+        return choice;
+    }
+}
+console.log(getHumenChoice())
