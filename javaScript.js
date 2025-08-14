@@ -17,4 +17,5 @@ function getHumenChoice(){
         return choice;
     }
 }
-console.log(getHumenChoice())
+let humanScor=0;
+let computerScore=0;
