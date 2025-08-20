@@ -18,6 +18,7 @@ let computerScore=0;
 //function playRound(){
     let humanChoice ;
     let computerChoice;
+    let result ;
     const body = document.querySelector("body");
     const rock = document.querySelector(".rock");
     const paper = document.querySelector(".paper");
@@ -26,50 +27,90 @@ let computerScore=0;
         humanChoice = "rock";
         computerChoice=getComputerChoice().toLowerCase();
             if(humanChoice===computerChoice){
-        console.log("it's a draw!")
+        result="it's a draw!";
     }
     else{
         if(computerChoice==="scissors"){
-            console.log("you win! "+ humanChoice+" beats "+computerChoice)
+            result="you win! "+ humanChoice+" beats "+computerChoice;
             humanScore++;
         }else{
-            console.log("you lose! "+ computerChoice+" beats "+humanChoice)
+            result="you lose! "+ computerChoice+" beats "+humanChoice;
             computerScore++;
         }
     }
-    })
+    const div = document.createElement("div");
+    div.textContent=result;
+    body.appendChild(div);
+    const score = document.createElement("p");
+    score.textContent="You " + humanScore +"\n  computer " + computerScore;
+    body.appendChild(score)
+    if(computerScore===5 || humanScore === 5){
+        let winner = humanScore>computerScore ? "You" : "computer";
+        const end = document.createElement("p");
+        end.textContent = "End of game the winner is: " +winner ; 
+        body.appendChild(end);
+    }
+})
+//paper
     paper.addEventListener("click" , () => {
         humanChoice = "paper";
         computerChoice=getComputerChoice().toLowerCase();
             if(humanChoice===computerChoice){
-        console.log("it's a draw!")
+        result="it's a draw!";
     }
     else{
         if(computerChoice==="rock"){
-            console.log("you win! "+ humanChoice+" beats "+computerChoice)
+            result="you win! "+ humanChoice+" beats "+computerChoice;
             humanScore++;
         }else{
-            console.log("you lose! "+ computerChoice+" beats "+humanChoice)
+            result="you lose! "+ computerChoice+" beats "+humanChoice;
             computerScore++;
         }
     }
+    const div = document.createElement("div");
+    div.textContent=result;
+    body.appendChild(div);
+    const score = document.createElement("p");
+    score.textContent="You " + humanScore +"\n  computer " + computerScore;
+    body.appendChild(score)
+    if(computerScore===5 || humanScore === 5){
+        let winner = humanScore>computerScore ? "You" : "computer";
+        const end = document.createElement("p");
+        end.textContent = "End of game the winner is: " +winner ; 
+        body.appendChild(end);
+    }
     })
+    //scissors
     scissors.addEventListener("click" , () => {
         humanChoice = "scissors";
         computerChoice=getComputerChoice().toLowerCase();
             if(humanChoice===computerChoice){
-        console.log("it's a draw!")
+        result="it's a draw!"
     }
     else{
         if(computerChoice==="paper"){
-            console.log("you win! "+ humanChoice+" beats "+computerChoice)
+            result="you win! "+ humanChoice+" beats "+computerChoice;
             humanScore++;
         }else{
-            console.log("you lose! "+ computerChoice+" beats "+humanChoice)
+           result="you lose! "+ computerChoice+" beats "+humanChoice;
             computerScore++;
         }
     }
+    const div = document.createElement("div");
+    div.textContent=result;
+    body.appendChild(div);
+    const score = document.createElement("p");
+    score.textContent="You " + humanScore +"\n  computer " + computerScore;
+    body.appendChild(score)
+    if(computerScore===5 || humanScore === 5){
+        let winner = humanScore>computerScore ? "You" : "computer";
+        const end = document.createElement("p");
+        end.textContent = "End of game the winner is: " +winner ; 
+        body.appendChild(end);
+    }
     })
+
+    
 
     
 
