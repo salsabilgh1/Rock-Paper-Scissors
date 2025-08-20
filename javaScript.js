@@ -1,4 +1,4 @@
-console.log("Hello World!")
+
 function getComputerChoice(){
     let choice=Math.floor(Math.random()*3+1);
     if(choice===1){
@@ -11,43 +11,65 @@ function getComputerChoice(){
     }
 }
 
-function getHumenChoice(){
-    let choice=prompt("enter your choice : Rock , Paper , or Scissors");
-    
-        return choice;
-    
-}
-let humanScor=0;
+
+let humanScore=0;
 let computerScore=0;
 
-function playRound(){
-    let humanChoice=getHumenChoice().toLowerCase();
-    let computerChoice=getComputerChoice().toLowerCase();
-    if(humanChoice===computerChoice){
+//function playRound(){
+    let humanChoice ;
+    let computerChoice;
+    const body = document.querySelector("body");
+    const rock = document.querySelector(".rock");
+    const paper = document.querySelector(".paper");
+    const scissors = document.querySelector(".scissors");
+    rock.addEventListener("click" , () => {
+        humanChoice = "rock";
+        computerChoice=getComputerChoice().toLowerCase();
+            if(humanChoice===computerChoice){
         console.log("it's a draw!")
     }
     else{
-        if(humanChoice==="rock"&&computerChoice==="scissors"||humanChoice==="paper"&&computerChoice==="rock"||humanChoice==="scissors"&&computerChoice==="paper"){
+        if(computerChoice==="scissors"){
             console.log("you win! "+ humanChoice+" beats "+computerChoice)
-            humanScor++;
+            humanScore++;
         }else{
             console.log("you lose! "+ computerChoice+" beats "+humanChoice)
             computerScore++;
         }
     }
-}
-function palyGame(){
-    for(i=0; i<5 ;i++){
-        console.log("round "+ i +" start")
-        playRound();
+    })
+    paper.addEventListener("click" , () => {
+        humanChoice = "paper";
+        computerChoice=getComputerChoice().toLowerCase();
+            if(humanChoice===computerChoice){
+        console.log("it's a draw!")
     }
-    console.log("scors:\n")
-    console.log("You: "+ humanScor)
-    console.log("computer: "+computerScore)
-    if(humanScor>computerScore){
-        console.log("you won the game!")
-    }else{
-        console.log("you lose")
+    else{
+        if(computerChoice==="rock"){
+            console.log("you win! "+ humanChoice+" beats "+computerChoice)
+            humanScore++;
+        }else{
+            console.log("you lose! "+ computerChoice+" beats "+humanChoice)
+            computerScore++;
+        }
     }
-}
-palyGame()
+    })
+    scissors.addEventListener("click" , () => {
+        humanChoice = "scissors";
+        computerChoice=getComputerChoice().toLowerCase();
+            if(humanChoice===computerChoice){
+        console.log("it's a draw!")
+    }
+    else{
+        if(computerChoice==="paper"){
+            console.log("you win! "+ humanChoice+" beats "+computerChoice)
+            humanScore++;
+        }else{
+            console.log("you lose! "+ computerChoice+" beats "+humanChoice)
+            computerScore++;
+        }
+    }
+    })
+
+    
+
